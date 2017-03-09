@@ -34,17 +34,34 @@ public class CoffeeMaker {
 	
 	 * @return boolean */
 	public boolean addRecipe(Recipe r) {
-        boolean canAddRecipe = true;
-            
-        //Check if the recipe already exists
+        return isAddable(r);
+    }
+	/**
+	 * Sees if a recipe item already exists.
+	 * @param r
+	 * @return
+	 */
+	public boolean alreadyExists(Recipe r)
+	{
+		boolean canAddRecipe = true;
         for(int i = 0; i < NUM_RECIPES; i++) {
             if(r.equals(recipeArray[i])) {
                 canAddRecipe = false;
             }
         }
+        return canAddRecipe;
+	}
+    
+	/**
+	 * checks for an empty recipe, and adds recipe to first empty spot.
+	 * @param r
+	 * @return
+	 */
+	public boolean isAddable(Recipe r)
+	{
+		boolean canAddRecipe = false;
         
-        //Check for an empty recipe, add recipe to first empty spot
-        if(canAddRecipe) {
+        if(alreadyExists(r) == true) {
         	int emptySpot = -1;
         	for(int i = 0; i < NUM_RECIPES; i++) {
         		if(!recipeFull[i]) {
@@ -61,7 +78,7 @@ public class CoffeeMaker {
         	}
         }
         return canAddRecipe;
-    }
+	}
     
 	/**
 	 * Returns true if the recipe was deleted from the 
