@@ -125,9 +125,15 @@ public class Inventory {
      * @return String
      */
     public String toString() {
-    	return "Coffee: " + getCoffee() + "\n" +
-			"Milk: " + getMilk() + "\n" +
-			"Sugar: " + getSugar() + "\n" +
-			"Chocolate: " + getChocolate() + "\n";
+    	final StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Coffee: ");
+		stringBuilder.append(getCoffee()).append(System.getProperty("line.separator"));
+		stringBuilder.append("Milk: ");
+		stringBuilder.append(getMilk()).append(System.getProperty("line.separator"));
+		stringBuilder.append("Sugar: ");
+		stringBuilder.append(getSugar()).append(System.getProperty("line.separator"));
+		stringBuilder.append("Chocolate: ");
+		stringBuilder.append(getChocolate()).append(System.getProperty("line.separator"));
+		return stringBuilder.toString();
     }
 }
