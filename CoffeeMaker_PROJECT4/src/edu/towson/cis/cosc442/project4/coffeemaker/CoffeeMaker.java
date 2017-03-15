@@ -59,9 +59,9 @@ public class CoffeeMaker {
 	 */
 	public boolean isAddable(Recipe r)
 	{
-		boolean canAddRecipe = false;
+		boolean canAddRecipe = alreadyExists(r);
         
-        if(alreadyExists(r) == true) {
+        if(canAddRecipe == true) {
         	int emptySpot = -1;
         	for(int i = 0; i < NUM_RECIPES; i++) {
         		if(!recipeFull[i]) {
@@ -131,7 +131,7 @@ public class CoffeeMaker {
      * @return boolean */
     public boolean addInventory(int amtCoffee, int amtMilk, int amtSugar, int amtChocolate) {
         boolean canAddInventory = true;
-        if(amtCoffee < 0 || amtMilk < 0 || amtSugar > 0 || amtChocolate < 0) { 
+        if(amtCoffee < 0 || amtMilk < 0 || amtSugar < 0 || amtChocolate < 0) { 
             canAddInventory = false;
         }
         else {
