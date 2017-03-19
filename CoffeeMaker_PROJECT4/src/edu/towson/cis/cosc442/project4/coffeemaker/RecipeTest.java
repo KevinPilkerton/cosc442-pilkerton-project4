@@ -41,9 +41,9 @@ Recipe r1;
 	}
 
 	@Test
-	public void testSetAmtChocolate() {
-		r.setAmtChocolate(400);
-		assertEquals(400, r.getAmtChocolate());
+	public void testSetAmtChocolate3() {
+		r.setAmtChocolate(0);
+		assertEquals(0, r.getAmtChocolate());
 	}
 
 	@Test
@@ -127,7 +127,7 @@ Recipe r1;
 
 	@Test
 	public void testEqualsRecipe1() {
-		Recipe r2 = new Recipe();
+		final Recipe r2 = new Recipe();
 		r2.setName("Mocha");
 		r2.setAmtCoffee(10);
 		r2.setAmtMilk(10);
@@ -139,7 +139,7 @@ Recipe r1;
 	
 	@Test
 	public void testEqualsRecipe2() {
-		Recipe r2 = new Recipe();
+		final Recipe r2 = new Recipe();
 		r2.setAmtCoffee(5);
 		r2.setAmtMilk(5);
 		r2.setAmtSugar(5);
@@ -150,7 +150,7 @@ Recipe r1;
 	
 	@Test
 	public void testEqualsRecipe3(){
-		Recipe r2 = new Recipe();
+		final Recipe r2 = new Recipe();
 		r2.setName("Coffee");
 		r2.setPrice(100);
 		r2.setAmtCoffee(100);

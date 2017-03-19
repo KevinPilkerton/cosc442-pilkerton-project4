@@ -29,9 +29,10 @@ public class Inventory {
     /**
      * Method setChocolate.
      * @param chocolate int
+     * ASK PROFESSOR SHOULD THIS BE chocolate > -1 for mutation test to pass? -1 > -1 isn't true so input for negative is still 0.
      */
     public void setChocolate(int chocolate) {
-    	if(chocolate >= 0) {
+    	if(chocolate > -1) {
     		Inventory.chocolate = chocolate;
     	}
     	else {
@@ -51,7 +52,7 @@ public class Inventory {
      * @param coffee int
      */
     public void setCoffee(int coffee) {
-    	if(coffee >= 0) {
+    	if(coffee > -1) {
     		Inventory.coffee = coffee;
     	}
     	else {
@@ -70,7 +71,7 @@ public class Inventory {
      * @param milk int
      */
     public void setMilk(int milk) {
-    	if(milk >= 0) {
+    	if(milk > -1) {
     		Inventory.milk = milk;
     	}
     	else {
@@ -89,7 +90,7 @@ public class Inventory {
      * @param sugar int
      */
     public void setSugar(int sugar) {
-    	if(sugar >= 0) {
+    	if(sugar > -1) {
     		Inventory.sugar = sugar;
     	}
     	else {

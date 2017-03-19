@@ -110,6 +110,18 @@ public class InventoryTest {
 		
 		assertFalse(i.enoughIngredients(r1));
 	}
+	/**
+	 * Mutation Test: killed lines 108, 111, 114, and 117: changed conditional boundary.
+	 */
+	@Test
+	public void testEnoughIngredients3() {
+		r1.setAmtCoffee(15);
+		r1.setAmtMilk(15);
+		r1.setAmtSugar(15);
+		r1.setAmtChocolate(15);
+		
+		assertTrue(i.enoughIngredients(r1));
+	}
 
 	@Test
 	public void testToString() {
